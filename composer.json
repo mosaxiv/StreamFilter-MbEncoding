@@ -1,5 +1,14 @@
 {
     "name": "mosaxiv/stream-filter-mbencoding",
+    "description": "Provides some PHP stream filter for mb_convert_encoding.",
+    "keywords": [
+        "stream-filter",
+        "mb_convert_encoding",
+        "SplFileObject",
+        "csv"
+    ],
+    "homepage": "https://github.com/mosaxiv/stream-filter-mbencoding",
+    "license": "MIT",
     "require": {
         "php": ">=7.0.0",
         "ext-mbstring": "*"
@@ -19,6 +28,10 @@
         }
     },
     "scripts": {
+        "check": [
+            "@test",
+            "@cs-check"
+        ],
         "test": "phpunit ./tests",
         "cs-check": "phpcs --standard=PSR2 ./src ./tests",
         "cs-fix": "phpcbf --standard=PSR2 ./src ./tests"
