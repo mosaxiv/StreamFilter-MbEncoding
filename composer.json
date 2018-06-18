@@ -1,5 +1,5 @@
 {
-    "name": "mosaxiv/stream-filter",
+    "name": "mosaxiv/stream-filter-mbencoding",
     "require": {
         "php": ">=7.0.0",
         "ext-mbstring": "*"
