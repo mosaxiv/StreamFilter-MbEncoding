@@ -1,0 +1,23 @@
+{
+    "name": "mosaxiv/stream-filter",
+    "require": {
+        "php": ">=7.0.0",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StreamFilter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\StreamFilter\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit ./tests"
+    }
+}
