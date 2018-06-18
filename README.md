@@ -13,6 +13,8 @@ composer require mosaxiv/stream-filter-mbencoding
 # Usage
 
 ```php
+use StreamFilter\ConvertMbEncoding;
+
 ConvertMbEncoding::register();
 $url = ConvertMbEncoding::getFilterURL('test.csv', 'UTF-8', 'SJIS-WIN');
 $file = new SplFileObject($url);
