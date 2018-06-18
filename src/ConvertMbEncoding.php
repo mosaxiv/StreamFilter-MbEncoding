@@ -35,29 +35,28 @@ class ConvertMbEncoding extends php_user_filter
     /**
      * Static method to return the stream filter filtername
      *
-     * @param string|string[] $toEncoding
-     * @param string|null $fromEncoding
+     * @param string $toEncoding
+     * @param string|string[]|null $fromEncoding
      * @return string
      */
     public static function getFilterName($toEncoding, $fromEncoding = null)
     {
-        if (is_array($toEncoding)) {
-            $toEncoding = implode(',', $toEncoding);
-        }
-
         if ($fromEncoding === null) {
             return sprintf('%s.%s', self::FILTERNAME, $toEncoding);
-        } else {
-            return sprintf('%s.%s:%s', self::FILTERNAME, $toEncoding, $fromEncoding);
         }
+
+        if (is_array($fromEncoding)) {
+            $fromEncoding = implode(',', $fromEncoding);
+        }
+        return sprintf('%s.%s:%s', self::FILTERNAME, $toEncoding, $fromEncoding);
     }
 
     /**
      * Return filter URL
      *
      * @param string $filename
-     * @param string|string[] $toEncoding
-     * @param string|null $fromEncoding
+     * @param string $toEncoding
+     * @param string|string[]|null $fromEncoding
      * @return string
      */
     public static function getFilterURL($filename, $toEncoding, $fromEncoding = null)
